@@ -32,6 +32,18 @@ public:
         msclr::interop::marshal_context ctx;
         return ctx.marshal_as<System::String^>(str);
     }
+    
+    static std::string getBattleEffectsString(bool isBattleEffectsOff) {
+        return isBattleEffectsOff ? "Off" : "On";
+    }
+
+    static std::string getBattleStyle(bool isBattleStyleSet) {
+        return isBattleStyleSet ? "Set" : "Switch";
+    }
+
+    static std::string getSoundString(bool isSoundStereo) {
+        return isSoundStereo ? "Stereo" : "Mono";
+    }
 
     static std::string getTextSpeedStr(char textSpeed){
         switch(textSpeed){

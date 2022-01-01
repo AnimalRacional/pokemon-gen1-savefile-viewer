@@ -33,6 +33,15 @@ namespace Gen1savefileediting {
 	private: System::Windows::Forms::Label^ lblPlaytime;
 	private: System::Windows::Forms::Label^ lblPlrId;
 	private: System::Windows::Forms::Label^ lblPlrStarter;
+	private: System::Windows::Forms::GroupBox^ groupBox1;
+	private: System::Windows::Forms::Label^ lblBattleStyle;
+	private: System::Windows::Forms::Label^ lblBattleEffects;
+	private: System::Windows::Forms::Label^ lblSound;
+	private: System::Windows::Forms::Label^ lblTextSpeed;
+
+
+
+
 
 	protected:
 		bool debugMode = false;
@@ -93,16 +102,21 @@ namespace Gen1savefileediting {
 			this->gpItemBox = (gcnew System::Windows::Forms::GroupBox());
 			this->lsbItemBox = (gcnew System::Windows::Forms::ListBox());
 			this->gbTrainerInfo = (gcnew System::Windows::Forms::GroupBox());
+			this->lblLeagueBeat = (gcnew System::Windows::Forms::Label());
+			this->lblPlaytime = (gcnew System::Windows::Forms::Label());
+			this->lblPlrId = (gcnew System::Windows::Forms::Label());
+			this->lblPlrStarter = (gcnew System::Windows::Forms::Label());
 			this->lblCoins = (gcnew System::Windows::Forms::Label());
 			this->lblMoney = (gcnew System::Windows::Forms::Label());
 			this->lblName = (gcnew System::Windows::Forms::Label());
 			this->gbPokedex = (gcnew System::Windows::Forms::GroupBox());
 			this->lbCaught = (gcnew System::Windows::Forms::ListBox());
 			this->lbSeen = (gcnew System::Windows::Forms::ListBox());
-			this->lblPlrStarter = (gcnew System::Windows::Forms::Label());
-			this->lblPlrId = (gcnew System::Windows::Forms::Label());
-			this->lblPlaytime = (gcnew System::Windows::Forms::Label());
-			this->lblLeagueBeat = (gcnew System::Windows::Forms::Label());
+			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->lblBattleEffects = (gcnew System::Windows::Forms::Label());
+			this->lblBattleStyle = (gcnew System::Windows::Forms::Label());
+			this->lblSound = (gcnew System::Windows::Forms::Label());
+			this->lblTextSpeed = (gcnew System::Windows::Forms::Label());
 			this->gbParty->SuspendLayout();
 			this->gbBox->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numCurBox))->BeginInit();
@@ -110,6 +124,7 @@ namespace Gen1savefileediting {
 			this->gpItemBox->SuspendLayout();
 			this->gbTrainerInfo->SuspendLayout();
 			this->gbPokedex->SuspendLayout();
+			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// btnOpenFile
@@ -226,6 +241,42 @@ namespace Gen1savefileediting {
 			this->gbTrainerInfo->TabStop = false;
 			this->gbTrainerInfo->Text = L"Trainer Info";
 			// 
+			// lblLeagueBeat
+			// 
+			this->lblLeagueBeat->AutoSize = true;
+			this->lblLeagueBeat->Location = System::Drawing::Point(6, 97);
+			this->lblLeagueBeat->Name = L"lblLeagueBeat";
+			this->lblLeagueBeat->Size = System::Drawing::Size(70, 13);
+			this->lblLeagueBeat->TabIndex = 6;
+			this->lblLeagueBeat->Text = L"League beat:";
+			// 
+			// lblPlaytime
+			// 
+			this->lblPlaytime->AutoSize = true;
+			this->lblPlaytime->Location = System::Drawing::Point(6, 84);
+			this->lblPlaytime->Name = L"lblPlaytime";
+			this->lblPlaytime->Size = System::Drawing::Size(49, 13);
+			this->lblPlaytime->TabIndex = 5;
+			this->lblPlaytime->Text = L"Playtime:";
+			// 
+			// lblPlrId
+			// 
+			this->lblPlrId->AutoSize = true;
+			this->lblPlrId->Location = System::Drawing::Point(6, 71);
+			this->lblPlrId->Name = L"lblPlrId";
+			this->lblPlrId->Size = System::Drawing::Size(51, 13);
+			this->lblPlrId->TabIndex = 4;
+			this->lblPlrId->Text = L"Player Id:";
+			// 
+			// lblPlrStarter
+			// 
+			this->lblPlrStarter->AutoSize = true;
+			this->lblPlrStarter->Location = System::Drawing::Point(7, 58);
+			this->lblPlrStarter->Name = L"lblPlrStarter";
+			this->lblPlrStarter->Size = System::Drawing::Size(41, 13);
+			this->lblPlrStarter->TabIndex = 3;
+			this->lblPlrStarter->Text = L"Starter:";
+			// 
 			// lblCoins
 			// 
 			this->lblCoins->AutoSize = true;
@@ -280,47 +331,61 @@ namespace Gen1savefileediting {
 			this->lbSeen->Size = System::Drawing::Size(153, 290);
 			this->lbSeen->TabIndex = 0;
 			// 
-			// lblPlrStarter
+			// groupBox1
 			// 
-			this->lblPlrStarter->AutoSize = true;
-			this->lblPlrStarter->Location = System::Drawing::Point(7, 58);
-			this->lblPlrStarter->Name = L"lblPlrStarter";
-			this->lblPlrStarter->Size = System::Drawing::Size(41, 13);
-			this->lblPlrStarter->TabIndex = 3;
-			this->lblPlrStarter->Text = L"Starter:";
+			this->groupBox1->Controls->Add(this->lblTextSpeed);
+			this->groupBox1->Controls->Add(this->lblSound);
+			this->groupBox1->Controls->Add(this->lblBattleStyle);
+			this->groupBox1->Controls->Add(this->lblBattleEffects);
+			this->groupBox1->Location = System::Drawing::Point(18, 450);
+			this->groupBox1->Name = L"groupBox1";
+			this->groupBox1->Size = System::Drawing::Size(194, 100);
+			this->groupBox1->TabIndex = 7;
+			this->groupBox1->TabStop = false;
+			this->groupBox1->Text = L"Options";
 			// 
-			// lblPlrId
+			// lblBattleEffects
 			// 
-			this->lblPlrId->AutoSize = true;
-			this->lblPlrId->Location = System::Drawing::Point(6, 71);
-			this->lblPlrId->Name = L"lblPlrId";
-			this->lblPlrId->Size = System::Drawing::Size(51, 13);
-			this->lblPlrId->TabIndex = 4;
-			this->lblPlrId->Text = L"Player Id:";
+			this->lblBattleEffects->AutoSize = true;
+			this->lblBattleEffects->Location = System::Drawing::Point(6, 16);
+			this->lblBattleEffects->Name = L"lblBattleEffects";
+			this->lblBattleEffects->Size = System::Drawing::Size(73, 13);
+			this->lblBattleEffects->TabIndex = 7;
+			this->lblBattleEffects->Text = L"Battle Effects:";
 			// 
-			// lblPlaytime
+			// lblBattleStyle
 			// 
-			this->lblPlaytime->AutoSize = true;
-			this->lblPlaytime->Location = System::Drawing::Point(6, 84);
-			this->lblPlaytime->Name = L"lblPlaytime";
-			this->lblPlaytime->Size = System::Drawing::Size(49, 13);
-			this->lblPlaytime->TabIndex = 5;
-			this->lblPlaytime->Text = L"Playtime:";
+			this->lblBattleStyle->AutoSize = true;
+			this->lblBattleStyle->Location = System::Drawing::Point(6, 29);
+			this->lblBattleStyle->Name = L"lblBattleStyle";
+			this->lblBattleStyle->Size = System::Drawing::Size(63, 13);
+			this->lblBattleStyle->TabIndex = 7;
+			this->lblBattleStyle->Text = L"Battle Style:";
 			// 
-			// lblLeagueBeat
+			// lblSound
 			// 
-			this->lblLeagueBeat->AutoSize = true;
-			this->lblLeagueBeat->Location = System::Drawing::Point(6, 97);
-			this->lblLeagueBeat->Name = L"lblLeagueBeat";
-			this->lblLeagueBeat->Size = System::Drawing::Size(70, 13);
-			this->lblLeagueBeat->TabIndex = 6;
-			this->lblLeagueBeat->Text = L"League beat:";
+			this->lblSound->AutoSize = true;
+			this->lblSound->Location = System::Drawing::Point(6, 42);
+			this->lblSound->Name = L"lblSound";
+			this->lblSound->Size = System::Drawing::Size(41, 13);
+			this->lblSound->TabIndex = 7;
+			this->lblSound->Text = L"Sound:";
+			// 
+			// lblTextSpeed
+			// 
+			this->lblTextSpeed->AutoSize = true;
+			this->lblTextSpeed->Location = System::Drawing::Point(6, 55);
+			this->lblTextSpeed->Name = L"lblTextSpeed";
+			this->lblTextSpeed->Size = System::Drawing::Size(65, 13);
+			this->lblTextSpeed->TabIndex = 7;
+			this->lblTextSpeed->Text = L"Text Speed:";
 			// 
 			// MainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(820, 606);
+			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->gbPokedex);
 			this->Controls->Add(this->gbTrainerInfo);
 			this->Controls->Add(this->gpItemBox);
@@ -338,6 +403,8 @@ namespace Gen1savefileediting {
 			this->gbTrainerInfo->ResumeLayout(false);
 			this->gbTrainerInfo->PerformLayout();
 			this->gbPokedex->ResumeLayout(false);
+			this->groupBox1->ResumeLayout(false);
+			this->groupBox1->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
@@ -393,6 +460,13 @@ namespace Gen1savefileediting {
 		for (unsigned short i = 0; i < 151; i++) {
 			lbCaught->Items->Add(PkmStringConverter::toSystemString(FormatStr::getPokemon(i, ": " + FormatStr::boolToCaught(reader.isPokemonCaught(i + 1)))));
 		}
+
+		// Options
+		GameOptions options = reader.getGameOptions();
+		lblBattleEffects->Text = PkmStringConverter::toSystemString(PkmStringConverter::getBattleEffectsString(options.battleEffectsOff));
+		lblBattleStyle->Text = PkmStringConverter::toSystemString(PkmStringConverter::getBattleStyle(options.battleStyleSet));
+		lblSound->Text = PkmStringConverter::toSystemString(PkmStringConverter::getSoundString(options.stereoSound));
+		lblTextSpeed->Text = PkmStringConverter::toSystemString(PkmStringConverter::getTextSpeedStr(options.textSpeed));
 	}
 
 	private: void printList(List lst, ListBox^ toAddTo) {
