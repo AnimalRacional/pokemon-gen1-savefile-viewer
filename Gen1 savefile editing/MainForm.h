@@ -477,7 +477,7 @@ namespace Gen1savefileediting {
 
 	}
 
-	private: void updateBox(SaveReader reader) {
+	private: void updateBox(SaveReader& reader) {
 		if (ofdGetFile->FileName->Length != 0) {
 			PokemonBox pkmBox = reader.getPokemonBox((unsigned char)numCurBox->Value);
 			lsbPCPokemon->Items->Clear();
@@ -485,9 +485,10 @@ namespace Gen1savefileediting {
 				std::string toWrite = (FormatStr::getCoolPokemon(pkmBox.pokemonList[i], pkmBox.pokemonNicknames[i], pkmBox.otNames[i]));
 				lsbPCPokemon->Items->Add(PkmStringConverter::toSystemString(toWrite));
 			}
+			free(pkmBox.pokemonList);
 		}
 	}
-
+		   
 	private: void updateBox() {
 		if (ofdGetFile->FileName->Length != 0) {
 			SaveReader reader(debugMode, ofdGetFile->FileName);
@@ -497,6 +498,7 @@ namespace Gen1savefileediting {
 				std::string toWrite = (FormatStr::getCoolPokemon(pkmBox.pokemonList[i], pkmBox.pokemonNicknames[i], pkmBox.otNames[i]));
 				lsbPCPokemon->Items->Add(PkmStringConverter::toSystemString(toWrite));
 			}
+			free(pkmBox.pokemonList);
 		}
 	}
 
