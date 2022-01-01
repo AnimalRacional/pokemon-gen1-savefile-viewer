@@ -64,9 +64,7 @@ public:
 
     static char decodeChar(char index){
         if(CHARACTER_TABLE.find(index) != CHARACTER_TABLE.end()){
-            if(CHARACTER_TABLE.find(index) != CHARACTER_TABLE.end()){
-                return CHARACTER_TABLE.at(index);
-            }
+            return CHARACTER_TABLE.at(index);
         }
         return (char)0;
     }
